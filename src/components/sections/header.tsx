@@ -41,10 +41,10 @@ export default function Header() {
           title="brand-logo"
           className="relative mr-6 flex items-center bg-transparent space-x-2"
         >
-          <Image src="/logo.jpg" alt="Logo" width={150} height={8} />
+          <Icons.logo className="w-8 h-8" />
         </Link>
 
-        <div className="hidden lg:block">
+        <div className="">
           <div className="flex items-center ">
             <div className="gap-2 flex">
               <Link
@@ -60,9 +60,6 @@ export default function Header() {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="mt-2 cursor-pointer block lg:hidden">
-          <Drawer />
         </div>
       </div>
       <hr

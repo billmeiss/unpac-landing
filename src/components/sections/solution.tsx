@@ -11,41 +11,40 @@ const features = [
   {
     title: "Purpose Built for packaging data",
     description:
-      "Our platform provides a purpose-built solution for packaging data collection, enabling brands to collect, manage, and analyze data in one place.",
-    className: "hover:bg-red-500/10 transition-all duration-500 ease-out",
+      "Our platform is designed around packaging compliance and sustainability criteria. ",
+    className: "hover:bg-primary/10 transition-all duration-500 ease-out",
   },
   {
-    title: "Multi-stakeholder from Day 1",
+    title: "Multi-stakeholder Approach",
     description:
-      "The packaging industry is inherently multi-stakeholder, and thus requires engaging not only brands but also suppliers and other key stakeholders who hold critical, often missing, data.",
+      "Our platform is collaborative. Designed to streamline engagement and the sharing of data between producers, suppliers and other key stakeholders.",
     className:
-      "order-3 xl:order-none hover:bg-blue-500/10 transition-all duration-500 ease-out",
+      "order-3 xl:order-none hover:bg-primary/10 transition-all duration-500 ease-out",
   },
   {
-    title: "Accurate Data",
-    description:
-      "Without accurate data brands can’t make actionable decisions. It’s the holy grail, the primary ingredient for any understanding, choices, or action to take place.",
+    title: "Data Accuracy ",
+    description: "Drive actionable outcomes from a reliable platform.",
     className:
-      "md:row-span-2 hover:bg-orange-500/10 transition-all duration-500 ease-out",
+      "md:row-span-2 hover:bg-primary/10 transition-all duration-500 ease-out",
   },
   {
-    title: "Save time & money",
+    title: "Saving you time & money",
     description:
-      "Use your time to do work technology can’t do, and let technology do the work you shouldn’t be doing.",
+      "Deploy your team to do high value work, while we handle the grunt work.",
     className:
-      "flex-row order-4 md:col-span-2 md:flex-row xl:order-none hover:bg-green-500/10 transition-all duration-500 ease-out",
+      "md:row-span-2 hover:bg-primary/10 transition-all duration-500 ease-out",
   },
 ];
 
 export default function Component() {
   return (
     <Section
-      title="Solution"
-      subtitle="Built to solve a multi-stakeholder problem in collecting data, by packaging experts."
-      description="The packaging industry struggles with siloed data, poor collaboration, and a lack of purpose-built technology for data collection. Solving the data collection problem is inherently multi-stakeholder, and thus requires engaging not only brands but also suppliers and other key stakeholders who hold critical, often missing, data."
+      title="Why Unpac?"
+      subtitle="Built to solve a multi-stakeholder problem, by packaging experts."
+      description="We recognize that the packaging industry struggles with siloed data, poor collaboration, and a lack of purpose-built technology for data collection."
       className="bg-neutral-100 dark:bg-neutral-900"
     >
-      <div className="mx-auto mt-16 grid max-w-sm grid-cols-1 gap-6 text-gray-500 md:max-w-3xl md:grid-cols-2 xl:grid-rows-2 md:grid-rows-3 xl:max-w-6xl xl:auto-rows-fr xl:grid-cols-3">
+      <div className="mx-auto mt-16 grid grid-cols-1 gap-6 text-gray-500 md:grid-cols-4 xl:grid-cols-4">
         {features.map((feature, index) => (
           <motion.div
             key={index}

@@ -19,7 +19,7 @@ export default function CtaSection() {
             "w-full sm:w-auto text-background flex gap-2"
           )}
         >
-          Talk to a human
+          Arrange a demo
         </Link>
       </div>
     </Section>

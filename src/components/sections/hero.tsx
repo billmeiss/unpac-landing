@@ -7,6 +7,8 @@ import HeroVideoDialog from "@/components/magicui/hero-video";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
+import { cx } from "class-variance-authority";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -55,23 +57,23 @@ function HeroTitles() {
           staggerChildren: 0.2,
         }}
       >
-        {["Automate", "packaging", "data", "and", "organisation"].map(
-          (text, index) => (
-            <motion.span
-              key={index}
-              className="inline-block px-1 md:px-2 text-balance font-semibold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.2,
-                ease,
-              }}
-            >
-              {text}
-            </motion.span>
-          )
-        )}
+        {["Automate", "packaging", "data", "collection"].map((text, index) => (
+          <motion.span
+            key={index}
+            className={`inline-block px-1 md:px-2 text-balance font-semibold ${
+              index === 2 || index === 1 ? "text-primary" : ""
+            }`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.2,
+              ease,
+            }}
+          >
+            {text}
+          </motion.span>
+        ))}
       </motion.h1>
       <motion.p
         className="mx-auto max-w-xl text-center text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-9 text-balance"
@@ -83,9 +85,12 @@ function HeroTitles() {
           ease,
         }}
       >
-        Stop wasting time on low-value tasks like data wrangling.{" "}
-        <b>Be a human</b>, let technology do the grunt work and collate your
-        packaging data into a single source of truth.
+        <b className="text-primary">No more data wrangling.</b>
+        <br />
+        <span>
+          Accurate, organised packaging data delivered in a fraction of the time
+          at a fraction of the cost.
+        </span>
       </motion.p>
     </div>
   );
@@ -109,7 +114,7 @@ function HeroCTA() {
             "w-full sm:w-auto text-background flex gap-2"
           )}
         >
-          Talk to a human
+          Arrange a demo
         </Link>
       </motion.div>
     </>
@@ -119,17 +124,19 @@ function HeroCTA() {
 function HeroImage() {
   return (
     <motion.div
-      className="relative mx-auto flex w-full items-center justify-center"
+      className="relative mx-auto py-10 flex w-full items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2, duration: 1, ease }}
     >
-      <HeroVideoDialog
-        animationStyle="from-center"
-        videoSrc="https://player.vimeo.com/video/1046148067"
-        thumbnailSrc="/dashboard.png"
-        thumbnailAlt="Hero Video"
-        className="border rounded-lg shadow-lg max-w-screen-lg mt-16"
+      <Image
+        src={"./demo.gif"}
+        layout={""}
+        height={1050}
+        width={1100}
+        className="border rounded-lg"
+        alt={`A cute animal!`}
+        unoptimized={true}
       />
     </motion.div>
   );
@@ -138,11 +145,11 @@ function HeroImage() {
 export default function Hero2() {
   return (
     <section id="hero">
-      <div className="relative flex w-full flex-col items-center justify-start px-4 pt-32 sm:px-6 sm:pt-24 md:pt-32 lg:px-8">
+      <div className="relative mb-10 flex w-full flex-col items-center justify-start px-4 pt-32 sm:px-6 sm:pt-24 md:pt-32 lg:px-8">
         <HeroTitles />
         <HeroCTA />
         <HeroImage />
-        <div className="pointer-events-none absolute inset-x-0 -bottom-12 h-1/3 bg-gradient-to-t from-background via-background to-transparent lg:h-1/4"></div>
+        {/* <div className="pointer-events-none absolute inset-x-0 -bottom-12 h-1/3 bg-gradient-to-t from-background via-background to-transparent lg:h-1/4"></div> */}
       </div>
     </section>
   );

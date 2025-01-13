@@ -5,31 +5,31 @@ import { BarChart3, Brackets, Brain, FileText, LineChart } from "lucide-react";
 const data = [
   {
     id: 1,
-    title: "Upload any type of packaging data",
-    content: "Easy to use, share unlimited files for data conversion.",
+    title: "Simplified Data Upload",
+    content: "Any file format, any location, drag & drop functionality.",
     image: "/dashboard.png",
     icon: <BarChart3 className="h-6 w-6 text-primary" />,
   },
   {
     id: 2,
-    title: "Choose custom parameters",
+    title: "Templates or custom parameters",
     content:
-      "Make use of our templates, or add custom fields that you need to know.",
+      "Use our library of existing reporting templates or specify your own.",
     image: "/dashboard.png",
     icon: <Brackets className="h-6 w-6 text-primary" />,
   },
   {
     id: 3,
-    title: "Receive accurate data in one place.",
+    title: "Centralised packaging data.",
     content:
-      "Get accurate actionable intelligence by knowing what is missing in your data.",
+      "Actionable data for reporting, marketing, compliance, and business intelligence.",
     image: "/dashboard.png",
     icon: <LineChart className="h-6 w-6 text-primary" />,
   },
   {
     id: 4,
-    title: "Coming Soon: ERP Integration",
-    content: "Integrate seamless into your existing workflow",
+    title: "ERP Integration",
+    content: "Dynamically update your data.",
     image: "/dashboard.png",
     icon: <FileText className="h-6 w-6 text-primary" />,
   },
@@ -39,7 +39,8 @@ export default function Component() {
   return (
     <Section
       title="Features"
-      subtitle="Finding, collecting and organising brand data into one place."
+      className="bg-primary/10"
+      subtitle="Collate your packaging data into a single source of truth."
     >
       <Features collapseDelay={5000} linePosition="bottom" data={data} />
     </Section>

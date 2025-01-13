@@ -13,7 +13,7 @@ export default function Footer() {
           title={siteConfig.name}
           className="relative mr-6 flex items-center space-x-2"
         >
-          <Image src="/logo.jpg" alt="Logo" width={150} height={8} />
+          <Icons.logo />
         </a>
 
         <div className="max-w-6xl mx-auto border-t py-2 grid md:grid-cols-2 h-full justify-between w-full grid-cols-1 gap-1">
@@ -21,8 +21,7 @@ export default function Footer() {
             Copyright © {new Date().getFullYear()}{" "}
             <Link href="/" className="cursor-pointer">
               {siteConfig.name}
-            </Link>{" "}
-            - {siteConfig.description}
+            </Link>
           </span>
           <ul className="flex justify-start md:justify-end text-sm tracking-tight text-foreground">
             <li className="mr-3 md:mx-4">
