@@ -124,7 +124,7 @@ function HeroCTA() {
 function HeroImage() {
   return (
     <motion.div
-      className="relative mx-auto py-10 flex w-full items-center justify-center"
+      className="relative mx-auto sm:flex hidden py-10 flex w-full items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.2, duration: 1, ease }}
