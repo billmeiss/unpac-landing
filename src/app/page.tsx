@@ -15,11 +15,7 @@ import TestimonialsCarousel from "@/components/sections/testimonials-carousel";
 
 import Hotjar from "@hotjar/browser";
 
-const siteId = 5294152;
-const hotjarVersion = 6;
-
 export default function Home() {
-  Hotjar.init(siteId, hotjarVersion);
   return (
     <main>
       <Header />
