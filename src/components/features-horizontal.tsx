@@ -91,7 +91,7 @@ export type FeaturesProps = {
 };
 
 export default function Features({
-  collapseDelay = 5000,
+  collapseDelay = 15000,
   ltr = false,
   linePosition = "left",
   data = [],
@@ -137,11 +137,20 @@ export default function Features({
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex !== undefined ? (prevIndex + 1) % data.length : 0
-      );
-    }, collapseDelay);
+    const timer = setInterval(
+      () => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex !== undefined ? (prevIndex + 1) % data.length : 0
+        );
+      },
+      currentIndex === 2
+        ? 12100
+        : currentIndex === 0
+        ? 4000
+        : currentIndex === 1
+        ? 5000
+        : 16000
+    );
 
     return () => clearInterval(timer);
   }, [currentIndex]);
@@ -153,7 +162,16 @@ export default function Features({
       scrollToIndex(nextIndex);
     };
 
-    const autoScrollTimer = setInterval(handleAutoScroll, collapseDelay);
+    const autoScrollTimer = setInterval(
+      handleAutoScroll,
+      currentIndex === 2
+        ? 12100
+        : currentIndex === 0
+        ? 4000
+        : currentIndex === 1
+        ? 5000
+        : 16000
+    );
 
     return () => clearInterval(autoScrollTimer);
   }, [currentIndex]);
@@ -210,14 +228,19 @@ export default function Features({
                         }`}
                       >
                         <div
+                          key={`timer-${index}-${currentIndex}`} // Key includes currentIndex
                           className={`absolute left-0 top-0 w-full ${
                             currentIndex === index ? "h-full" : "h-0"
                           } origin-top bg-primary transition-all ease-linear dark:bg-white`}
                           style={{
                             transitionDuration:
-                              currentIndex === index
-                                ? `${collapseDelay}ms`
-                                : "0s",
+                              currentIndex === 2
+                                ? `12100ms`
+                                : currentIndex === 0
+                                ? "4000ms"
+                                : currentIndex === 1
+                                ? "5000ms"
+                                : "16000ms",
                           }}
                         ></div>
                       </div>
@@ -235,11 +258,16 @@ export default function Features({
                           } h-full ${
                             currentIndex === index ? "w-full" : "w-0"
                           } origin-left bg-primary transition-all ease-linear dark:bg-white`}
+                          key={`timer-top-${index}-${currentIndex}`} // Key includes currentIndex
                           style={{
                             transitionDuration:
-                              currentIndex === index
-                                ? `${collapseDelay}ms`
-                                : "0s",
+                              currentIndex === 2
+                                ? `12100ms`
+                                : currentIndex === 0
+                                ? "4000ms"
+                                : currentIndex === 1
+                                ? "5000ms"
+                                : "16000ms", // changed from "16000s" to "16000ms"
                           }}
                         ></div>
                       </div>
@@ -250,10 +278,10 @@ export default function Features({
                         <div className="item-box size-16 bg-primary/10 rounded-full sm:mx-6 mx-2 shrink-0 flex items-center justify-center">
                           {item.icon}
                         </div>
-                        <div className="font-bold text-xl my-3 ">
+                        <div className="font-bold justify-left text-left text-xl my-3 ">
                           {item.title}
                         </div>
-                        <div className="justify-center text-center mb-4">
+                        <div className="justify-center text-left mb-4">
                           {item.content}
                         </div>
                       </div>
@@ -262,7 +290,7 @@ export default function Features({
                 ))}
               </Accordion.Root>
             </div>
-            {/* <div
+            <div
               className={`w-auto overflow-hidden relative rounded-lg ${
                 ltr && "md:order-1"
               }`}
@@ -298,7 +326,7 @@ export default function Features({
                 colorFrom="hsl(var(--primary))"
                 colorTo="hsl(var(--primary)/0)"
               />
-            </div> */}
+            </div>
 
             <ul
               ref={carouselRef}
@@ -321,9 +349,16 @@ export default function Features({
                       className={`absolute left-0 top-0 h-full ${
                         currentIndex === index ? "w-full" : "w-0"
                       } origin-top bg-primary transition-all ease-linear dark:bg-white`}
+                      key={`timer-mobile-${index}-${currentIndex}`} // Key includes currentIndex
                       style={{
                         transitionDuration:
-                          currentIndex === index ? `${collapseDelay}ms` : "0s",
+                          currentIndex === 2
+                            ? `12100ms`
+                            : currentIndex === 0
+                            ? "4000ms"
+                            : currentIndex === 1
+                            ? "5000ms"
+                            : "16000ms",
                       }}
                     ></div>
                   </div>

@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header
       className={
-        "relative sticky top-0 z-50 py-2 bg-background/60 backdrop-blur"
+        "relative sticky z-50 top-0  py-2 bg-background/60 backdrop-blur"
       }
     >
       <div className="flex justify-between items-center container">
@@ -41,14 +41,14 @@ export default function Header() {
           title="brand-logo"
           className="relative mr-6 flex items-center bg-transparent space-x-2"
         >
-          <Icons.logo className="w-8 h-8" />
+          <Icons.logo className="w-20 h-20" />
         </Link>
 
         <div className="">
           <div className="flex items-center ">
-            <div className="gap-2 flex">
+            <div className="gap-4 flex">
               <Link
-                href="https://calendly.com/leelubner/packaging-data-meet"
+                href="https://calendly.com/leelubner/unpac-packaging-epr-data-collection-trial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
@@ -56,7 +56,18 @@ export default function Header() {
                   "w-full sm:w-auto text-background flex gap-2"
                 )}
               >
-                Get Started
+                Try for free
+              </Link>
+              <Link
+                href=" https://calendly.com/leelubner/packaging-data-usa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "w-full sm:w-auto text-background hover:bg-gray-200 bg-gray-100 text-green-800 flex gap-2"
+                )}
+              >
+                Learn more
               </Link>
             </div>
           </div>

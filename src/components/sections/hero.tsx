@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import { cx } from "class-variance-authority";
+import { AnimatedBeamDemo } from "../animated-beam";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -46,7 +47,7 @@ function HeroPill() {
 
 function HeroTitles() {
   return (
-    <div className="flex w-full max-w-2xl flex-col space-y-4 overflow-hidden pt-8">
+    <div className="flex w-full max-w-3xl flex-col space-y-4 overflow-hidden pt-8">
       <motion.h1
         className="text-center text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-6xl"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
@@ -57,26 +58,28 @@ function HeroTitles() {
           staggerChildren: 0.2,
         }}
       >
-        {["Automate", "packaging", "data", "collection"].map((text, index) => (
-          <motion.span
-            key={index}
-            className={`inline-block px-1 md:px-2 text-balance font-semibold ${
-              index === 2 || index === 1 ? "text-primary" : ""
-            }`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: index * 0.2,
-              ease,
-            }}
-          >
-            {text}
-          </motion.span>
-        ))}
+        {["Automate", "data", "collection", "for", "packaging", "EPR"].map(
+          (text, index) => (
+            <motion.span
+              key={index}
+              className={`inline-block px-1 md:px-2 text-balance font-semibold ${
+                index === 0 ? "text-primary" : ""
+              }`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.2,
+                ease,
+              }}
+            >
+              {text}
+            </motion.span>
+          )
+        )}
       </motion.h1>
       <motion.p
-        className="mx-auto max-w-xl text-center text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-9 text-balance"
+        className="mx-auto max-w-xl text-black-900 text-center text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-9 text-balance"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -85,11 +88,12 @@ function HeroTitles() {
           ease,
         }}
       >
-        <b className="text-primary">No more data wrangling.</b>
+        <span className="font-semibold text-black text-2xl">
+          Accurate, organised packaging data.{" "}
+        </span>
         <br />
-        <span>
-          Accurate, organised packaging data delivered in a fraction of the time
-          at a fraction of the cost.
+        <span className="text-black">
+          Delivered in a fraction of the time. At a fraction of the cost
         </span>
       </motion.p>
     </div>
@@ -145,10 +149,17 @@ function HeroImage() {
 export default function Hero2() {
   return (
     <section id="hero">
-      <div className="relative mb-10 flex w-full flex-col items-center justify-start px-4 pt-32 sm:px-6 sm:pt-24 md:pt-32 lg:px-8">
+      <div className="relative mb-10 flex w-full flex-col items-center justify-start px-4 pt-4 lg:px-8">
         <HeroTitles />
-        <HeroCTA />
-        <HeroImage />
+        {/* <HeroCTA /> */}
+        <AnimatedBeamDemo />
+        <div className="text-center my-20 mt-10 max-w-7xl mx-auto mt-4 max-w-xs text-3xl font-semibold sm:max-w-none sm:text-4xl md:text-5xl">
+          <span className="font-bold">
+            Unpac is your {"'"}stage zero{"'"} solution
+          </span>
+          <br />
+          focused solely on unlocking the power of your packaging data.
+        </div>
         {/* <div className="pointer-events-none absolute inset-x-0 -bottom-12 h-1/3 bg-gradient-to-t from-background via-background to-transparent lg:h-1/4"></div> */}
       </div>
     </section>
