@@ -26,16 +26,13 @@ const features = [
     description:
       "Built by packaging experts, our software is fit for purpose. It is intuitive and simple so that anyone across the business, whatever their role, can use it with confidence.",
     className:
-      "md:row-span-2 hover:bg-primary/10 transition-all duration-500 ease-out",
+      "order-3 xl:order-none hover:bg-primary/10 transition-all duration-500 ease-out",
   },
 ];
 
 export default function Component() {
   return (
-    <Section
-      subtitle="Why Unpac?"
-      className="bg-neutral-100 dark:bg-neutral-900"
-    >
+    <Section subtitle="Why Unpac?" className="">
       <div className="mx-auto mt-16 grid grid-cols-1 gap-6 text-gray-500 md:grid-cols-3 xl:grid-cols-3">
         {features.map((feature, index) => (
           <motion.div

@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cx } from "class-variance-authority";
 import { AnimatedBeamDemo } from "../animated-beam";
+import { AuroraText } from "../magicui/aurora-text";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -49,7 +50,7 @@ function HeroTitles() {
   return (
     <div className="flex w-full max-w-3xl flex-col space-y-4 overflow-hidden pt-8">
       <motion.h1
-        className="text-center text-4xl font-medium leading-tight text-foreground sm:text-5xl md:text-6xl"
+        className="text-center text-2xl font-medium leading-tight text-foreground sm:text-5xl md:text-6xl"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
         animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
         transition={{
@@ -73,7 +74,13 @@ function HeroTitles() {
                 ease,
               }}
             >
-              {text}
+              {index === 0 ? (
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#112707] to-primary font-bold animate-pulse ">
+                  {text}{" "}
+                </span>
+              ) : (
+                text
+              )}
             </motion.span>
           )
         )}
@@ -88,12 +95,12 @@ function HeroTitles() {
           ease,
         }}
       >
-        <span className="font-semibold text-black text-2xl">
-          Accurate, organised packaging data.{" "}
+        <span className="font-semibold text-black text-sm sm:text-2xl">
+          Accurate, organised packaging data{" "}
         </span>
         <br />
-        <span className="text-black">
-          Delivered in a fraction of the time. At a fraction of the cost
+        <span className="text-xs sm:text-2xl text-black">
+          Delivered in a fraction of the time. At a fraction of the cost.
         </span>
       </motion.p>
     </div>
@@ -153,12 +160,13 @@ export default function Hero2() {
         <HeroTitles />
         {/* <HeroCTA /> */}
         <AnimatedBeamDemo />
-        <div className="text-center my-20 mt-10 max-w-7xl mx-auto mt-4 max-w-xs text-3xl font-semibold sm:max-w-none sm:text-4xl md:text-5xl">
+        <div className="text-center my-20 mt-10 max-w-4xl mx-auto mt-4 text-sm sm:text-3xl font-semibold">
           <span className="font-bold">
-            Unpac is your {"'"}stage zero{"'"} solution
+            Unpac is your <span className="text-[#A4C408]">stage zero</span>{" "}
+            solution
           </span>
           <br />
-          focused solely on unlocking the power of your packaging data.
+          unlocking the power of your packaging data
         </div>
         {/* <div className="pointer-events-none absolute inset-x-0 -bottom-12 h-1/3 bg-gradient-to-t from-background via-background to-transparent lg:h-1/4"></div> */}
       </div>

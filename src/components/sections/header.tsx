@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ShimmerButton } from "../magicui/shimmer-button";
 
 export default function Header() {
   const [addBorder, setAddBorder] = useState(false);
@@ -39,9 +40,9 @@ export default function Header() {
         <Link
           href="/"
           title="brand-logo"
-          className="relative mr-6 flex items-center bg-transparent space-x-2"
+          className="relative md:w-full w-20 pt-1 mr-6 flex items-center bg-transparent space-x-2"
         >
-          <Icons.logo className="w-20 h-20" />
+          <Icons.logo />
         </Link>
 
         <div className="">
@@ -53,7 +54,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "w-full sm:w-auto text-background flex gap-2"
+                  "w-full text-xs sm:text-sm px-2 h-8 sm:h-10 py-0 sm:px-4 sm:py-2 sm:w-auto text-background flex gap-2"
                 )}
               >
                 Try for free
@@ -64,7 +65,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "w-full sm:w-auto text-background hover:bg-gray-200 bg-gray-100 text-green-800 flex gap-2"
+                  "w-full text-xs sm:text-sm px-2 py-0  h-8 sm:h-10 sm:px-4 sm:py-2 sm:w-auto  text-background hover:bg-gray-200 bg-gray-100 text-green-800 flex gap-2"
                 )}
               >
                 Learn more
