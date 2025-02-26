@@ -11,7 +11,7 @@ export default function CtaSection() {
     <Section
       id="cta"
       subtitle={""}
-      className="bg-primary/10 text-black text-center rounded-xl py-16"
+      className="bg-primary/10 text-black text-center rounded-xl pb-16"
     >
       <h3 className="mx-auto mt-4 max-w-xs text-3xl text-primary font-semibold sm:max-w-none sm:text-4xl md:text-5xl">
         It{"'"}s Time to Act
@@ -41,20 +41,17 @@ export default function CtaSection() {
         business
       </span>
       <div className="flex flex-col mt-14 w-full sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-        <ShimmerButton
-          background="rgb(37, 104, 0)"
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "sm:w-auto text-background text-2xl sm:text-4xl font-semibold px-10 py-6 sm:px-16 sm:py-10 flex gap-2"
-          )}
-        >
-          <Link
-            href="https://calendly.com/leelubner/unpac-packaging-epr-data-collection-trial"
-            className={cn()}
+        <Link href="https://calendly.com/leelubner/unpac-packaging-epr-data-collection-trial">
+          <ShimmerButton
+            background="rgb(37, 104, 0)"
+            className={cn(
+              buttonVariants({ variant: "default" }),
+              "sm:w-auto text-background text-2xl sm:text-4xl font-semibold px-10 py-6 sm:px-16 sm:py-10 flex gap-2"
+            )}
           >
             Try for free
-          </Link>
-        </ShimmerButton>
+          </ShimmerButton>
+        </Link>
       </div>
     </Section>
   );

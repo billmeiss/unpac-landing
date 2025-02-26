@@ -46,12 +46,11 @@ Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
   const div4Ref = useRef<HTMLDivElement>(null);
   const div5Ref = useRef<HTMLDivElement>(null);
-  const div6Ref = useRef<HTMLDivElement>(null);
+  // const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
   const div8Ref = useRef<HTMLDivElement>(null);
   const div9Ref = useRef<HTMLDivElement>(null);
@@ -65,9 +64,6 @@ export function AnimatedBeamDemo() {
     >
       <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
         <div className="flex flex-col justify-center gap-2">
-          <Circle ref={div1Ref}>
-            <Icons.ppt />
-          </Circle>
           <Circle ref={div2Ref}>
             <Icons.googleDocs />
           </Circle>
@@ -75,17 +71,17 @@ export function AnimatedBeamDemo() {
             <Icons.pdf />
           </Circle>
           <Circle ref={div4Ref}>
-            <Icons.jpg />
+            <Icons.excel />
           </Circle>
           <Circle ref={div5Ref}>
             <Icons.drive />
           </Circle>
           <Circle ref={div7Ref}>
-            <Icons.excel />
+            <Icons.jpg />
           </Circle>
-          <Circle ref={div6Ref}>
+          {/* <Circle ref={div6Ref}>
             <Icons.folders />
-          </Circle>
+          </Circle> */}
         </div>
         <div className="flex flex-col justify-center">
           <Square ref={div8Ref} className="size-16">
@@ -99,12 +95,6 @@ export function AnimatedBeamDemo() {
         </div>
       </div>
 
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div1Ref}
-        toRef={div8Ref}
-        duration={3}
-      />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div2Ref}
@@ -135,12 +125,12 @@ export function AnimatedBeamDemo() {
         toRef={div8Ref}
         duration={3}
       />
-      <AnimatedBeam
+      {/* <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div8Ref}
         duration={3}
-      />
+      /> */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div8Ref}

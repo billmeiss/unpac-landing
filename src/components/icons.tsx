@@ -311,7 +311,7 @@ export const Icons = {
           <rect
             x="305.34"
             y="27.615"
-            style={{ fill: "#F2F2F2" }}
+            fill="#F2F2F2"
             width="54.89"
             height="132.57"
           />
@@ -329,7 +329,7 @@ export const Icons = {
           <rect
             x="166.17"
             y="27.615"
-            style={{ fill: "#F2F2F2" }}
+            fill="#F2F2F2"
             width="54.89"
             height="132.57"
           />
@@ -347,7 +347,7 @@ export const Icons = {
           <rect
             x="27"
             y="27.615"
-            style={{ fill: "#F2F2F2" }}
+            fill="#F2F2F2"
             width="54.89"
             height="132.57"
           />
@@ -358,27 +358,9 @@ export const Icons = {
           />
         </g>
       </g>
-      <rect
-        x="46.947"
-        y="45.121"
-        style={{ fill: "#808080" }}
-        width="15"
-        height="97.555"
-      />
-      <rect
-        x="186.117"
-        y="45.121"
-        style={{ fill: "#808080" }}
-        width="15"
-        height="97.555"
-      />
-      <rect
-        x="325.287"
-        y="45.121"
-        style={{ fill: "#808080" }}
-        width="15"
-        height="97.555"
-      />
+      <rect x="46.947" y="45.121" fill="#808080" width="15" height="97.555" />
+      <rect x="186.117" y="45.121" fill="#808080" width="15" height="97.555" />
+      <rect x="325.287" y="45.121" fill="#808080" width="15" height="97.555" />
     </svg>
   ),
   unpac: (props: IconProps) => (
