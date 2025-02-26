@@ -50,7 +50,7 @@ export function AnimatedBeamDemo() {
   const div3Ref = useRef<HTMLDivElement>(null);
   const div4Ref = useRef<HTMLDivElement>(null);
   const div5Ref = useRef<HTMLDivElement>(null);
-  // const div6Ref = useRef<HTMLDivElement>(null);
+  const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
   const div8Ref = useRef<HTMLDivElement>(null);
   const div9Ref = useRef<HTMLDivElement>(null);
@@ -79,9 +79,9 @@ export function AnimatedBeamDemo() {
           <Circle ref={div7Ref}>
             <Icons.jpg />
           </Circle>
-          {/* <Circle ref={div6Ref}>
+          <Circle ref={div6Ref}>
             <Icons.folders />
-          </Circle> */}
+          </Circle>
         </div>
         <div className="flex flex-col justify-center">
           <Square ref={div8Ref} className="size-16">
@@ -125,12 +125,12 @@ export function AnimatedBeamDemo() {
         toRef={div8Ref}
         duration={3}
       />
-      {/* <AnimatedBeam
+      <AnimatedBeam
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div8Ref}
         duration={3}
-      /> */}
+      />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div8Ref}
