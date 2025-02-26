@@ -99,7 +99,7 @@ function HeroTitles() {
           Accurate, organised packaging data{" "}
         </span>
         <br />
-        <span className="text-xs sm:text-2xl text-black">
+        <span className="text-xs sm:text-xl text-black">
           Delivered in a fraction of the time. At a fraction of the cost.
         </span>
       </motion.p>
