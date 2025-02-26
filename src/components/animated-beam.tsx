@@ -77,10 +77,10 @@ export function AnimatedBeamDemo() {
             <Icons.drive />
           </Circle>
           <Circle ref={div7Ref}>
-            <Icons.jpg />
+            <Icons.folders />
           </Circle>
           <Circle ref={div6Ref}>
-            <Icons.folders />
+            <Icons.jpg />
           </Circle>
         </div>
         <div className="flex flex-col justify-center">
