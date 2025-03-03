@@ -11,6 +11,7 @@ import Image from "next/image";
 import { cx } from "class-variance-authority";
 import { AnimatedBeamDemo } from "../animated-beam";
 import { AuroraText } from "../magicui/aurora-text";
+import { WordRotate } from "../magicui/word-rotate";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -48,7 +49,7 @@ function HeroPill() {
 
 function HeroTitles() {
   return (
-    <div className="flex w-full max-w-3xl flex-col space-y-4 overflow-hidden pt-8">
+    <div className="flex w-full max-w-5xl flex-col space-y-4 overflow-hidden pt-8">
       <motion.h1
         className="text-center text-2xl font-medium leading-tight text-foreground sm:text-5xl md:text-6xl"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
@@ -59,7 +60,7 @@ function HeroTitles() {
           staggerChildren: 0.2,
         }}
       >
-        {["Automate", "data", "collection", "for", "packaging", "EPR"].map(
+        {["Automate", "data", "collection", "for", "packaging"].map(
           (text, index) => (
             <motion.span
               key={index}
@@ -77,6 +78,13 @@ function HeroTitles() {
               {index === 0 ? (
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#112707] to-primary font-bold animate-pulse ">
                   {text}{" "}
+                </span>
+              ) : index === 4 ? (
+                <span className="inline-flex items-center justify-center">
+                  <WordRotate
+                    className="text-black dark:text-white"
+                    words={["packaging EPR", "packaging design", "packaging procurement", "packaging cost analysis", "packaging sustainability strategy", "packaging LCAs"]}
+                  />
                 </span>
               ) : (
                 text
